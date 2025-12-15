@@ -20,21 +20,18 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
 
       {/* Contenido */}
-      <div className="z-10 text-center px-4 max-w-4xl text-white">
-        <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-gold mb-6 font-medium">
-          Haute Cuisine Française
-        </p>
-
-        <RevealText delay={0.2}>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-medium leading-tight mb-8">
-            Lune
-          </h1>
+      <div className="z-10 text-center px-4 max-w-3xl text-white">
+        <RevealText delay={0.1}>
+          <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-gold mb-8 font-medium">
+            Haute Cuisine Française
+          </p>
         </RevealText>
 
-        <p className="text-lg md:text-xl font-light text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
-          Donde la tradición culinaria se encuentra con el minimalismo moderno bajo la luz de
-          París.
-        </p>
+        <RevealText delay={0.3}>
+          <p className="text-2xl md:text-3xl lg:text-4xl font-serif font-light text-white max-w-2xl mx-auto leading-relaxed drop-shadow-lg mb-12">
+            Donde la tradición culinaria se encuentra con el minimalismo moderno bajo la luz de París.
+          </p>
+        </RevealText>
 
         <div className="mt-12">
           <Link
