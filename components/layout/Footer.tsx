@@ -22,27 +22,27 @@ export function Footer() {
             <h4 className="text-gold text-xs tracking-widest uppercase">Explorar</h4>
             <ul className="space-y-2 text-base text-gray-400 font-light">
               <li>
-                <Link href="/" className="block py-2 hover:text-white transition-colors active:scale-95">
+                <Link href="/" className="block py-2 hover:text-white transition-colors active:scale-95 focus-ring rounded-sm">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link href="/historia" className="block py-2 hover:text-white transition-colors active:scale-95">
+                <Link href="/historia" className="block py-2 hover:text-white transition-colors active:scale-95 focus-ring rounded-sm">
                   Historia
                 </Link>
               </li>
               <li>
-                <Link href="/menu" className="block py-2 hover:text-white transition-colors active:scale-95">
+                <Link href="/menu" className="block py-2 hover:text-white transition-colors active:scale-95 focus-ring rounded-sm">
                   Menú de Temporada
                 </Link>
               </li>
               <li>
-                <Link href="/vinos" className="block py-2 hover:text-white transition-colors active:scale-95">
+                <Link href="/vinos" className="block py-2 hover:text-white transition-colors active:scale-95 focus-ring rounded-sm">
                   Carta de Vinos
                 </Link>
               </li>
               <li>
-                <Link href="/reservas" className="block py-2 hover:text-white transition-colors active:scale-95">
+                <Link href="/reservas" className="block py-2 hover:text-white transition-colors active:scale-95 focus-ring rounded-sm">
                   Reservas
                 </Link>
               </li>
@@ -61,21 +61,21 @@ export function Footer() {
               <div className="flex space-x-4 pt-4">
                 <a
                   href="#"
-                  className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group active:scale-95"
+                  className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group active:scale-95 focus-ring"
                   aria-label="Instagram"
                 >
                   <Instagram size={20} className="text-gray-400 group-hover:text-black transition-colors" />
                 </a>
                 <a
                   href="#"
-                  className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group active:scale-95"
+                  className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group active:scale-95 focus-ring"
                   aria-label="Facebook"
                 >
                   <Facebook size={20} className="text-gray-400 group-hover:text-black transition-colors" />
                 </a>
                 <a
                   href="#"
-                  className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group active:scale-95"
+                  className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group active:scale-95 focus-ring"
                   aria-label="Twitter"
                 >
                   <Twitter size={20} className="text-gray-400 group-hover:text-black transition-colors" />
@@ -91,13 +91,13 @@ export function Footer() {
           <div className="flex space-x-8 mt-4 md:mt-0">
             <Link
               href="/politica-privacidad"
-              className="hover:text-gray-400 uppercase tracking-widest transition-colors"
+              className="hover:text-gray-400 uppercase tracking-widest transition-colors focus-ring rounded-sm"
             >
               Privacidad
             </Link>
             <Link
               href="/terminos-condiciones"
-              className="hover:text-gray-400 uppercase tracking-widest transition-colors"
+              className="hover:text-gray-400 uppercase tracking-widest transition-colors focus-ring rounded-sm"
             >
               Términos
             </Link>

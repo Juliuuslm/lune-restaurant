@@ -43,7 +43,7 @@ export default function VinosPage() {
       {/* Content */}
       <div className="bg-[#0F0F0F] text-cream">
       {/* Sommelier Section */}
-      <section className="py-24 px-6 border-b border-gray-900">
+      <section className="py-section-md px-6 border-b border-gray-900">
         <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-1/2">
             <RevealText>
@@ -75,7 +75,7 @@ export default function VinosPage() {
       </section>
 
       {/* Wine Lists */}
-      <section className="py-32 px-6">
+      <section className="py-section-lg px-6">
         <div className="container mx-auto max-w-4xl space-y-24">
           {wineCategories.map((category, idx) => (
             <div key={category.id}>
@@ -98,7 +98,7 @@ export default function VinosPage() {
       </section>
 
       {/* Pairing Section */}
-      <section className="py-24 text-center bg-[#111] border-t border-gray-900">
+      <section className="py-section-md text-center bg-[#111] border-t border-gray-900">
         <RevealText>
           <Grape className="mx-auto text-gold mb-6" size={40} strokeWidth={1} />
           <h2 className="text-3xl font-serif mb-6">{pairingInfo.title}</h2>

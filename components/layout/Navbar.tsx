@@ -68,7 +68,7 @@ export function Navbar() {
           <Link
             href="/"
             className={cn(
-              'text-2xl font-serif tracking-widest font-bold z-50 transition-colors duration-300 cursor-pointer hover:opacity-80',
+              'text-2xl font-serif tracking-widest font-bold z-50 transition-colors duration-300 cursor-pointer hover:opacity-80 focus-ring rounded-sm',
               scrolled || isMenuOpen ? 'text-black' : 'text-white',
               isMenuOpen && '!text-cream'
             )}
@@ -88,7 +88,7 @@ export function Navbar() {
                 key={link.id}
                 href={link.href}
                 className={cn(
-                  'transition-colors hover:text-gold',
+                  'transition-colors hover:text-gold focus-ring rounded-sm',
                   pathname === link.href && 'text-gold border-b border-gold'
                 )}
               >
@@ -101,7 +101,7 @@ export function Navbar() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={cn(
-              'lg:hidden z-50 p-3 focus:outline-none transition-colors active:scale-95',
+              'lg:hidden z-50 p-2 transition-colors active:scale-95 focus-ring rounded-sm',
               scrolled || isMenuOpen ? 'text-black' : 'text-white',
               isMenuOpen && '!text-cream'
             )}
@@ -126,7 +126,7 @@ export function Navbar() {
               key={link.id}
               href={link.href}
               className={cn(
-                'hover:text-gold transition-colors',
+                'hover:text-gold transition-colors focus-ring rounded-sm',
                 pathname === link.href && 'text-gold'
               )}
             >

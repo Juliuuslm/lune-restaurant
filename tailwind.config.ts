@@ -23,6 +23,9 @@ const config: Config = {
       spacing: {
         '128': '32rem',
         '144': '36rem',
+        'section-sm': '5rem',   // 80px - Para secciones compactas
+        'section-md': '8rem',   // 128px - Estándar
+        'section-lg': '10rem',  // 160px - Para separación dramática
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

@@ -37,7 +37,7 @@ export default function HistoriaPage() {
 
       {/* Content */}
       <div className="bg-white text-black">
-      <section className="py-20 md:py-32 px-6">
+      <section className="py-section-sm md:py-section-md px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <RevealText>
@@ -76,7 +76,7 @@ export default function HistoriaPage() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-24 bg-black text-cream text-center px-6">
+      <section className="py-section-md bg-black text-cream text-center px-6">
         <RevealText>
           <p className="font-serif text-3xl md:text-5xl italic leading-relaxed max-w-4xl mx-auto opacity-90">
             "La cocina es el arte de transformar lo efímero en un recuerdo eterno."
@@ -88,7 +88,7 @@ export default function HistoriaPage() {
       </section>
 
       {/* Chef Section */}
-      <section className="py-20 md:py-32 px-6 bg-cream">
+      <section className="py-section-sm md:py-section-md px-6 bg-cream">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="order-2 md:order-1 aspect-square overflow-hidden relative">
@@ -123,12 +123,12 @@ export default function HistoriaPage() {
       </section>
 
       {/* Pilares */}
-      <section className="py-20 md:py-32 px-6">
+      <section className="py-section-sm md:py-section-md px-6">
         <div className="container mx-auto max-w-5xl">
           <RevealText className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-serif">Nuestros Pilares</h2>
           </RevealText>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-center">
             <div className="space-y-4">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-black">
                 <Feather strokeWidth={1} size={32} />

@@ -104,7 +104,7 @@ export default function MenuPage() {
           <section
             key={category.id}
             id={category.id}
-            className="py-20 scroll-mt-[180px]"
+            className="py-section-sm md:py-section-md scroll-mt-[180px]"
           >
             <RevealText className="mb-12 text-center">
               <span className="text-gold text-xs font-bold tracking-widest uppercase block mb-2">

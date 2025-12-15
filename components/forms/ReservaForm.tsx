@@ -1,11 +1,13 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { Calendar, Clock, Users, CheckCircle } from 'lucide-react'
+import { Calendar, Clock, Users, CheckCircle, AlertCircle } from 'lucide-react'
 import { Modal } from '@/components/ui/Modal'
 
 export function ReservaForm() {
   const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
   const [formData, setFormData] = useState({
     fecha: '',
     hora: '19:00',
@@ -16,30 +18,105 @@ export function ReservaForm() {
     comentarios: '',
   })
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    // Mock: Solo mostrar modal de éxito (sin backend real)
-    setShowSuccessModal(true)
+  // Obtener fecha mínima (hoy)
+  const getMinDate = () => {
+    const today = new Date()
+    return today.toISOString().split('T')[0]
+  }
 
-    // Reset form
-    setFormData({
-      fecha: '',
-      hora: '19:00',
-      invitados: '2',
-      nombre: '',
-      telefono: '',
-      email: '',
-      comentarios: '',
-    })
+  // Obtener fecha máxima (3 meses desde hoy)
+  const getMaxDate = () => {
+    const maxDate = new Date()
+    maxDate.setMonth(maxDate.getMonth() + 3)
+    return maxDate.toISOString().split('T')[0]
+  }
+
+  // Validar email
+  const isValidEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+
+  // Validar teléfono (mínimo 9 dígitos)
+  const isValidPhone = (phone: string) => {
+    const cleanPhone = phone.replace(/\D/g, '')
+    return cleanPhone.length >= 9
+  }
+
+  // Validar formulario
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {}
+
+    if (!formData.fecha) {
+      newErrors.fecha = 'Por favor selecciona una fecha'
+    }
+
+    if (!formData.nombre.trim()) {
+      newErrors.nombre = 'El nombre es requerido'
+    } else if (formData.nombre.trim().length < 2) {
+      newErrors.nombre = 'El nombre debe tener al menos 2 caracteres'
+    }
+
+    if (!formData.email) {
+      newErrors.email = 'El email es requerido'
+    } else if (!isValidEmail(formData.email)) {
+      newErrors.email = 'Por favor ingresa un email válido'
+    }
+
+    if (!formData.telefono) {
+      newErrors.telefono = 'El teléfono es requerido'
+    } else if (!isValidPhone(formData.telefono)) {
+      newErrors.telefono = 'Por favor ingresa un teléfono válido (mínimo 9 dígitos)'
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (!validateForm()) {
+      return
+    }
+
+    setIsLoading(true)
+
+    // Simular envío del formulario
+    setTimeout(() => {
+      setShowSuccessModal(true)
+      setIsLoading(false)
+      setErrors({})
+
+      // Reset form
+      setFormData({
+        fecha: '',
+        hora: '19:00',
+        invitados: '2',
+        nombre: '',
+        telefono: '',
+        email: '',
+        comentarios: '',
+      })
+    }, 800)
   }
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     })
+
+    // Limpiar error del campo cuando el usuario comienza a escribir
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: '',
+      })
+    }
   }
 
   return (
@@ -54,18 +131,28 @@ export function ReservaForm() {
             >
               Fecha
             </label>
-            <div className="relative border-b border-gray-300 pb-2 flex items-center focus-within:border-gold transition-colors">
-              <Calendar size={18} className="text-gold mr-3 flex-shrink-0" />
+            <div className={`relative border-b pb-2 flex items-center transition-colors ${
+              errors.fecha ? 'border-red-400' : 'border-gray-300 focus-within:border-gold'
+            }`}>
+              <Calendar size={18} className={`mr-3 flex-shrink-0 ${errors.fecha ? 'text-red-400' : 'text-gold'}`} />
               <input
                 type="date"
                 id="fecha"
                 name="fecha"
                 value={formData.fecha}
                 onChange={handleChange}
+                min={getMinDate()}
+                max={getMaxDate()}
                 className="w-full outline-none bg-transparent font-serif text-lg text-black"
                 required
               />
             </div>
+            {errors.fecha && (
+              <div className="flex items-center gap-1 text-red-400 text-xs">
+                <AlertCircle size={14} />
+                {errors.fecha}
+              </div>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -129,55 +216,97 @@ export function ReservaForm() {
 
         {/* Datos de contacto */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Nombre"
-            value={formData.nombre}
-            onChange={handleChange}
-            className="border-b border-gray-300 pb-2 outline-none font-light text-lg placeholder-gray-400 focus:border-gold transition-colors"
-            required
-          />
-          <input
-            type="tel"
-            id="telefono"
-            name="telefono"
-            placeholder="Teléfono"
-            value={formData.telefono}
-            onChange={handleChange}
-            className="border-b border-gray-300 pb-2 outline-none font-light text-lg placeholder-gray-400 focus:border-gold transition-colors"
-            required
-          />
+          <div className="space-y-2">
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Nombre"
+              value={formData.nombre}
+              onChange={handleChange}
+              className={`w-full border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
+                errors.nombre ? 'border-red-400 focus:border-red-400' : 'border-gray-300 focus:border-gold'
+              }`}
+              required
+            />
+            {errors.nombre && (
+              <div className="flex items-center gap-1 text-red-400 text-xs">
+                <AlertCircle size={14} />
+                {errors.nombre}
+              </div>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="Teléfono"
+              value={formData.telefono}
+              onChange={handleChange}
+              className={`w-full border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
+                errors.telefono ? 'border-red-400 focus:border-red-400' : 'border-gray-300 focus:border-gold'
+              }`}
+              required
+            />
+            {errors.telefono && (
+              <div className="flex items-center gap-1 text-red-400 text-xs">
+                <AlertCircle size={14} />
+                {errors.telefono}
+              </div>
+            )}
+          </div>
         </div>
 
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full border-b border-gray-300 pb-2 outline-none font-light text-lg placeholder-gray-400 focus:border-gold transition-colors"
-          required
-        />
+        <div className="space-y-2">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className={`w-full border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
+              errors.email ? 'border-red-400 focus:border-red-400' : 'border-gray-300 focus:border-gold'
+            }`}
+            required
+          />
+          {errors.email && (
+            <div className="flex items-center gap-1 text-red-400 text-xs">
+              <AlertCircle size={14} />
+              {errors.email}
+            </div>
+          )}
+        </div>
 
         {/* Comentarios */}
-        <textarea
-          id="comentarios"
-          name="comentarios"
-          placeholder="Solicitudes especiales (opcional)..."
-          value={formData.comentarios}
-          onChange={handleChange}
-          className="w-full border-b border-gray-300 pb-2 outline-none font-light text-lg placeholder-gray-400 focus:border-gold transition-colors h-24 resize-none"
-        ></textarea>
+        <div className="space-y-2">
+          <textarea
+            id="comentarios"
+            name="comentarios"
+            placeholder="Solicitudes especiales (opcional)..."
+            value={formData.comentarios}
+            onChange={handleChange}
+            maxLength={500}
+            className="w-full border-b border-gray-300 pb-2 outline-none font-light text-lg placeholder-gray-400 focus:border-gold transition-colors h-24 resize-none"
+          />
+          <div className="text-right text-xs text-gray-400">
+            {formData.comentarios.length}/500
+          </div>
+        </div>
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-black text-white py-4 uppercase tracking-widest text-sm hover:bg-gold transition-colors duration-300 mt-8"
+          disabled={isLoading}
+          className={`w-full py-4 uppercase tracking-widest text-sm transition-all duration-300 mt-8 ${
+            isLoading
+              ? 'bg-gray-400 text-white cursor-not-allowed'
+              : 'bg-black text-white hover:bg-gold active:scale-95'
+          }`}
         >
-          Confirmar Solicitud
+          {isLoading ? 'Procesando...' : 'Confirmar Solicitud'}
         </button>
       </form>
 
