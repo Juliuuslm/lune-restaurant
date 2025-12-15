@@ -54,7 +54,6 @@ export default function MenuPage() {
     { id: 'entrees', label: 'Para Empezar', icon: Wheat },
     { id: 'plats', label: 'Plats Principaux', icon: ChevronDown },
     { id: 'desserts', label: 'Dulces', icon: Coffee },
-    { id: 'vins', label: 'Vinos', icon: Wine },
   ]
 
   return (
