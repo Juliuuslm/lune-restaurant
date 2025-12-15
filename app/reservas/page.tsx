@@ -1,5 +1,5 @@
 import type { Metadata} from 'next'
-import Image from 'next/image'
+import { PageHero } from '@/components/sections/PageHero'
 import { ReservaForm } from '@/components/forms/ReservaForm'
 import { RevealText } from '@/components/animations/RevealText'
 import { Utensils } from 'lucide-react'
@@ -15,27 +15,13 @@ export const dynamic = 'force-static'
 export default function ReservasPage() {
   return (
     <>
-      {/* Hero Header */}
-      <header className="relative h-[50vh] md:h-[65vh] lg:h-[80vh] w-full flex flex-col justify-center items-center overflow-hidden">
-        {/* Hero Background Image */}
-        <Image
-          src="/images/reservas/hero.jpg"
-          alt="Réservations - Reserva tu mesa en Lune"
-          fill
-          className="object-cover -z-10"
-          priority
-          quality={85}
-        />
-        <div className="absolute inset-0 z-0 bg-black/50"></div>
-        <div className="z-10 text-center px-4">
-          <RevealText delay={0.2}>
-            <p className="text-xs tracking-[0.4em] uppercase text-gold mb-6">Votre Table</p>
-          </RevealText>
-          <RevealText delay={0.4}>
-            <h1 className="text-6xl md:text-8xl font-serif text-white italic">Réservations</h1>
-          </RevealText>
-        </div>
-      </header>
+      <PageHero
+        image="/images/reservas/hero.jpg"
+        title="Réservations"
+        subtitle="Votre Table"
+        height="standard"
+        overlay="medium"
+      />
 
       {/* Content */}
       <div className="bg-cream text-black min-h-screen">

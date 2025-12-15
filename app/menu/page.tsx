@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { menuCategories, type MenuItem } from '@/lib/constants/menu-data'
+import { PageHero } from '@/components/sections/PageHero'
 import { RevealText } from '@/components/animations/RevealText'
 import { Wheat, ChevronDown, Coffee, Wine } from 'lucide-react'
 
@@ -58,25 +59,14 @@ export default function MenuPage() {
 
   return (
     <>
-      {/* Hero Header */}
-      <header className="relative h-[50vh] md:h-[65vh] lg:h-[80vh] w-full flex flex-col justify-center items-center overflow-hidden pt-20 md:pt-24">
-        {/* Hero Background Image */}
-        <Image
-          src="/images/pagina-menu/hero.jpg"
-          alt="La Carte - Menú de Lune"
-          fill
-          className="object-cover -z-10"
-          priority
-          quality={85}
-        />
-        <div className="absolute inset-0 z-0 bg-black/50"></div>
-        <div className="z-10 text-center px-4">
-          <p className="text-xs tracking-[0.3em] uppercase text-gold mb-4">Saison Hiver 2024</p>
-          <RevealText delay={0.2}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white italic">La Carte</h1>
-          </RevealText>
-        </div>
-      </header>
+      <PageHero
+        image="/images/pagina-menu/hero.jpg"
+        title="La Carte"
+        subtitle="Saison Hiver 2024"
+        height="standard"
+        overlay="medium"
+        additionalPadding
+      />
 
       {/* Sticky Navigation */}
       <div className="sticky top-[64px] lg:top-[64px] z-40 bg-cream border-b border-gray-200 py-4 shadow-sm overflow-hidden">

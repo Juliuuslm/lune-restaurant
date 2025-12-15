@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import { PageHero } from '@/components/sections/PageHero'
 import { RevealText } from '@/components/animations/RevealText'
 import { Feather, Droplet, Sun } from 'lucide-react'
 
@@ -14,26 +15,15 @@ export const dynamic = 'force-static'
 export default function HistoriaPage() {
   return (
     <>
-      {/* Hero Header */}
-      <header className="relative h-[50vh] md:h-[65vh] lg:h-[80vh] w-full flex flex-col justify-center items-center overflow-hidden">
-        {/* Hero Background Image */}
-        <Image
-          src="/images/historia/hero.jpg"
-          alt="Historia de Lune"
-          fill
-          className="object-cover -z-10"
-          priority
-          quality={85}
-        />
-        <div className="absolute inset-0 z-0 bg-black/30"></div>
-        <div className="z-10 text-center px-4 max-w-3xl">
-          <p className="text-xs tracking-[0.4em] uppercase text-white mb-6">Notre Héritage</p>
-          <RevealText delay={0.2}>
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif text-white italic">Notre Histoire</h1>
-          </RevealText>
-          <div className="w-24 h-px bg-white/50 mx-auto mt-8"></div>
-        </div>
-      </header>
+      <PageHero
+        image="/images/historia/hero.jpg"
+        title="Notre Histoire"
+        subtitle="Notre Héritage"
+        height="standard"
+        overlay="light"
+      >
+        <div className="w-24 h-px bg-white/50 mx-auto mt-8"></div>
+      </PageHero>
 
       {/* Content */}
       <div className="bg-white text-black">

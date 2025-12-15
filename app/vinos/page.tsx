@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { wineCategories, pairingInfo } from '@/lib/constants/wines-data'
+import { PageHero } from '@/components/sections/PageHero'
 import { WineCard } from '@/components/sections/WineCard'
 import { RevealText } from '@/components/animations/RevealText'
 import { Grape, GlassWater } from 'lucide-react'
@@ -16,32 +17,21 @@ export const revalidate = 3600 // ISR: 1 hora
 export default function VinosPage() {
   return (
     <>
-      {/* Hero Header */}
-      <header className="relative h-[50vh] md:h-[65vh] lg:h-[80vh] w-full flex flex-col justify-center items-center overflow-hidden">
-        {/* Hero Background Image */}
-        <Image
-          src="/images/vinos/hero.jpg"
-          alt="La Cave - Vinos de Lune"
-          fill
-          className="object-cover -z-10"
-          priority
-          quality={85}
-        />
-        <div className="absolute inset-0 z-0 bg-black/50"></div>
-        <div className="z-10 text-center px-4 max-w-3xl">
-          <p className="text-xs tracking-[0.4em] uppercase text-gold mb-6">Collection Privée</p>
-          <RevealText delay={0.2}>
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif text-white italic">La Cave</h1>
-          </RevealText>
-          <p className="mt-8 text-gray-300 font-light text-lg max-w-xl mx-auto leading-relaxed">
-            Un viaje a través de los terroirs más prestigiosos de Francia, curado con pasión y
-            paciencia.
-          </p>
-        </div>
-      </header>
+      <PageHero
+        image="/images/vinos/hero.jpg"
+        title="La Cave"
+        subtitle="Collection Privée"
+        height="standard"
+        overlay="medium"
+      >
+        <p className="mt-8 text-gray-300 font-light text-lg max-w-xl mx-auto leading-relaxed">
+          Un viaje a través de los terroirs más prestigiosos de Francia, curado con pasión y
+          paciencia.
+        </p>
+      </PageHero>
 
       {/* Content */}
-      <div className="bg-[#0F0F0F] text-cream">
+      <div className="bg-dark-surface text-cream">
       {/* Sommelier Section */}
       <section className="py-section-md px-6 border-b border-gray-900">
         <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center gap-16">
@@ -98,7 +88,7 @@ export default function VinosPage() {
       </section>
 
       {/* Pairing Section */}
-      <section className="py-section-md text-center bg-[#111] border-t border-gray-900">
+      <section className="py-section-md text-center bg-black border-t border-gray-900">
         <RevealText>
           <Grape className="mx-auto text-gold mb-6" size={40} strokeWidth={1} />
           <h2 className="text-3xl font-serif mb-6">{pairingInfo.title}</h2>
