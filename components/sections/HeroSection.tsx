@@ -16,8 +16,8 @@ export function HeroSection() {
         quality={85}
       />
       {/* Overlay gradients */}
-      <div className="absolute inset-0 z-0 bg-black/40"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <div className="absolute inset-0 z-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
 
       {/* Contenido */}
       <div className="z-10 text-center px-4 max-w-3xl text-white">
