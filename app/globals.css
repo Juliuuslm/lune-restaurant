@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream: #F9F8F4;
+    --color-black: #1A1A1A;
+    --color-gold: #D4AF37;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-cream text-black font-sans antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold hover:bg-gold-dark text-white
+           px-8 py-3 rounded-lg transition-all
+           duration-300 font-semibold shadow-md hover:shadow-xl;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .text-reveal {
+    @apply opacity-0 translate-y-8;
+  }
+
+  /* Custom scrollbar para modales */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gold-dark rounded;
+  }
+
+  /* Hide scrollbar pero mantener funcionalidad */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Scrollbar delgado para navegación mobile */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #D4AF37 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 2px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #c5a028;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Touch feedback para dispositivos móviles */
+@media (hover: none) and (pointer: coarse) {
+  button:active,
+  a:active,
+  [role="button"]:active {
+    opacity: 0.7;
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+  }
+
+  /* Prevenir highlight azul en mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

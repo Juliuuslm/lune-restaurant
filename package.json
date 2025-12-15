@@ -1,0 +1,42 @@
+{
+  "name": "lune-restaurant",
+  "version": "1.0.0",
+  "description": "Restaurante Lune - Sitio web Next.js 14",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.19.0",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "gsap": "^3.14.2",
+    "lenis": "^1.3.16",
+    "lucide-react": "^0.561.0",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^25.0.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.0.10",
+    "postcss": "^8.5.6",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.9.3"
+  }
+}
