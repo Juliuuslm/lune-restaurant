@@ -36,16 +36,15 @@ export function HeroSection() {
         <div className="mt-12">
           <Link
             href="/reservas"
-            className="group relative inline-flex items-center space-x-2 px-8 py-4 bg-white text-black overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+            className="group relative inline-flex items-center space-x-2 px-8 py-4 bg-gold text-black overflow-hidden transition-all duration-300 hover:bg-black hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
           >
-            <span className="relative z-10 flex items-center space-x-2 text-sm tracking-widest uppercase font-semibold">
+            <span className="relative z-10 flex items-center space-x-2 text-sm tracking-widest uppercase font-semibold group-hover:text-white transition-colors duration-300">
               <span>Reservar Mesa</span>
               <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform"
               />
             </span>
-            <div className="absolute inset-0 bg-gold transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
           </Link>
         </div>
       </div>
