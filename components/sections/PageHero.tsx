@@ -30,9 +30,9 @@ export function PageHero({
   }
 
   const overlays = {
-    light: 'bg-black/30',
-    medium: 'bg-black/50',
-    dark: 'bg-black/70',
+    light: 'bg-black/40',
+    medium: 'bg-black/65',
+    dark: 'bg-black/80',
   }
 
   const paddingClass = additionalPadding ? 'pt-20 md:pt-24' : ''

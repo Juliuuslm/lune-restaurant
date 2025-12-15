@@ -20,7 +20,7 @@ export default function ReservasPage() {
         title="Réservations"
         subtitle="Votre Table"
         height="standard"
-        overlay="medium"
+        overlay="dark"
       />
 
       {/* Content */}

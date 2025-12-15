@@ -20,7 +20,7 @@ export default function HistoriaPage() {
         title="Notre Histoire"
         subtitle="Notre Héritage"
         height="standard"
-        overlay="light"
+        overlay="medium"
       >
         <div className="w-24 h-px bg-white/50 mx-auto mt-8"></div>
       </PageHero>

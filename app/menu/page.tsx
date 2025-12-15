@@ -64,7 +64,7 @@ export default function MenuPage() {
         title="La Carte"
         subtitle="Saison Hiver 2024"
         height="standard"
-        overlay="medium"
+        overlay="dark"
         additionalPadding
       />
 

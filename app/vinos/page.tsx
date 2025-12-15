@@ -22,7 +22,7 @@ export default function VinosPage() {
         title="La Cave"
         subtitle="Collection Privée"
         height="standard"
-        overlay="medium"
+        overlay="dark"
       >
         <p className="mt-8 text-gray-300 font-light text-lg max-w-xl mx-auto leading-relaxed">
           Un viaje a través de los terroirs más prestigiosos de Francia, curado con pasión y
