@@ -8,21 +8,25 @@ export function PhilosophySection() {
       <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Imagen */}
         <div className="order-2 md:order-1 relative">
-          <div className="relative aspect-[3/4] overflow-hidden shadow-2xl bg-gray-200">
-            <Image
-              src="/images/pagina-principal/philosophy.jpg"
-              alt="Filosofía de Lune - Detalle de plato gourmet"
-              fill
-              className="object-cover"
-              quality={85}
-            />
-          </div>
+          <RevealText direction="left" delay={0.2}>
+            <div className="relative aspect-[3/4] overflow-hidden shadow-2xl bg-gray-200 group hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] transition-all duration-500">
+              <Image
+                src="/images/pagina-principal/philosophy.jpg"
+                alt="Filosofía de Lune - Detalle de plato gourmet"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                quality={85}
+              />
+            </div>
+          </RevealText>
           {/* Cita decorativa */}
-          <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/95 backdrop-blur-sm border-l-2 border-gold shadow-lg">
-            <p className="font-serif italic text-lg text-gray-800">
-              "La cuisine est un art de la patience."
-            </p>
-          </div>
+          <RevealText direction="up" delay={0.4}>
+            <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/95 backdrop-blur-sm border-l-2 border-gold shadow-lg hover:shadow-xl hover:border-l-gold-light transition-all duration-300 group">
+              <p className="font-serif italic text-lg text-gray-800 group-hover:text-gold transition-colors duration-300">
+                "La cuisine est un art de la patience."
+              </p>
+            </div>
+          </RevealText>
         </div>
 
         {/* Texto */}
