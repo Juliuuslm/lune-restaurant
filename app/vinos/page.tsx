@@ -38,7 +38,7 @@ export default function VinosPage() {
           <div className="w-full md:w-1/2">
             <RevealText>
               <span className="text-gold text-xs font-bold tracking-widest uppercase block mb-4">
-                Head Sommelier
+                Sommelier Jefe
               </span>
               <h2 className="text-3xl md:text-4xl font-serif mb-6">Claire Dubois</h2>
               <p className="text-gray-400 leading-8 font-light mb-6">
@@ -55,7 +55,7 @@ export default function VinosPage() {
             {/* Sommelier Image */}
             <Image
               src="/images/vinos/sommelier.jpg"
-              alt="Claire Dubois - Head Sommelier"
+              alt="Claire Dubois - Sommelier Jefe"
               fill
               className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               quality={85}

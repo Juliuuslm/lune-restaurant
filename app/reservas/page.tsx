@@ -17,8 +17,8 @@ export default function ReservasPage() {
     <>
       <PageHero
         image="/images/reservas/hero.jpg"
-        title="Réservations"
-        subtitle="Votre Table"
+        title="Reservas"
+        subtitle="Tu Mesa"
         height="standard"
         overlay="dark"
       />
@@ -44,7 +44,7 @@ export default function ReservasPage() {
               </h3>
               <ul className="space-y-4 text-sm font-light text-gray-600">
                 <li className="flex justify-between border-b border-gray-100 pb-2">
-                  <span>Dress Code</span>
+                  <span>Código de Vestimenta</span>
                   <span className="font-medium text-black">Tenue de Ville</span>
                 </li>
                 <li className="flex justify-between border-b border-gray-100 pb-2">
@@ -59,7 +59,7 @@ export default function ReservasPage() {
             </RevealText>
 
             <RevealText delay={0.4} className="bg-black text-white p-10 shadow-lg text-center">
-              <h3 className="text-xl font-serif mb-4 text-gold">Private Dining</h3>
+              <h3 className="text-xl font-serif mb-4 text-gold">Comedor Privado</h3>
               <p className="text-gray-400 font-light text-sm mb-6 leading-relaxed">
                 Para eventos exclusivos en nuestra sala privada "La Lune Noire".
               </p>

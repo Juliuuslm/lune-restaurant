@@ -83,17 +83,17 @@ export const winesData: Record<string, Wine[]> = {
 export const wineCategories: WineCategory[] = [
   {
     id: 'champagne',
-    title: 'Champagne & Bulles',
+    title: 'Champagne & Burbujas',
     wines: winesData.champagne,
   },
   {
     id: 'blancs',
-    title: 'Vins Blancs',
+    title: 'Vinos Blancos',
     wines: winesData.blancs,
   },
   {
     id: 'rouges',
-    title: 'Vins Rouges',
+    title: 'Vinos Tintos',
     wines: winesData.rouges,
   },
 ]

@@ -17,8 +17,8 @@ export default function HistoriaPage() {
     <>
       <PageHero
         image="/images/historia/hero.jpg"
-        title="Notre Histoire"
-        subtitle="Notre Héritage"
+        title="Nuestra Historia"
+        subtitle="Nuestro Legado"
         height="standard"
         overlay="medium"
       >
