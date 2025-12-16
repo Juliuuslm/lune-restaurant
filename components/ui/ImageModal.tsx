@@ -67,23 +67,26 @@ export function ImageModal({
   return (
     <div
       className={cn(
-        'fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 overflow-hidden',
+        'fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300',
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       )}
+      onClick={onClose}
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/95 backdrop-blur-sm"
-        onClick={onClose}
+        className="absolute inset-0 bg-black/95 backdrop-blur-sm -z-10"
         aria-hidden="true"
       />
 
       {/* Contenido con scroll */}
       <div
         className={cn(
-          'relative w-full max-w-4xl max-h-[90vh] overflow-y-auto transition-all duration-500 transform z-10 scrollbar-thin',
+          'relative w-full max-w-4xl max-h-[90vh] overflow-y-scroll transition-all duration-500 transform z-10 bg-black rounded-lg',
           isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         )}
+        style={{
+          overscrollBehavior: 'contain',
+        }}
         role="dialog"
         aria-modal="true"
         onClick={(e) => e.stopPropagation()}
@@ -98,7 +101,7 @@ export function ImageModal({
         </button>
 
         {/* Imagen */}
-        <div className="relative w-full aspect-[4/3] bg-black rounded-lg overflow-hidden shadow-2xl clear-both">
+        <div className="relative w-full aspect-[4/3] bg-black overflow-hidden clear-both">
           <Image
             src={src}
             alt={alt}

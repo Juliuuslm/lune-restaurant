@@ -58,24 +58,28 @@ export function WineModal({ isOpen, onClose, wine }: WineModalProps) {
     <div
       className={cn(
         'fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300',
-        isOpen ? 'opacity-100' : 'opacity-0'
+        isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       )}
+      onClick={onClose}
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/95 backdrop-blur-sm"
-        onClick={onClose}
+        className="absolute inset-0 bg-black/95 backdrop-blur-sm -z-10"
         aria-hidden="true"
       />
 
       {/* Contenido */}
       <div
         className={cn(
-          'relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-dark-surface text-cream shadow-2xl transition-all duration-500 transform border border-gray-800',
+          'relative w-full max-w-2xl max-h-[90vh] overflow-y-scroll bg-dark-surface text-cream shadow-2xl transition-all duration-500 transform border border-gray-800',
           isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         )}
+        style={{
+          overscrollBehavior: 'contain',
+        }}
         role="dialog"
         aria-modal="true"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Botón cerrar */}
         <button
