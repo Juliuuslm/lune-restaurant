@@ -20,10 +20,12 @@ export function useScrollLock(isLocked: boolean) {
       const lenisInstance = (window as any).lenis
 
       if (lenisInstance) {
-        // Desktop: detener Lenis + sobrescribir overflow:clip con overflow:hidden
-        lenisInstance.stop()
+        // Desktop: NO detener Lenis (eso previene eventos de scroll)
+        // Solo aplicar overflow:hidden con inline styles (mayor prioridad que CSS)
+        // Esto bloquea el scroll de la página pero permite scroll interno de modals
         document.documentElement.style.overflow = 'hidden'
         document.documentElement.style.position = 'relative'
+        document.body.style.overflow = 'hidden'
       } else {
         // Mobile: position fixed trick para iOS Safari
         const scrollY = window.scrollY
@@ -41,9 +43,7 @@ export function useScrollLock(isLocked: boolean) {
         if (lenisInstance) {
           document.documentElement.style.overflow = ''
           document.documentElement.style.position = ''
-          if ((window as any).lenis) {
-            (window as any).lenis.start()
-          }
+          document.body.style.overflow = ''
         } else {
           // Restaurar mobile scroll
           document.body.style.position = ''
