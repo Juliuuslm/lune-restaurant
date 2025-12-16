@@ -20,7 +20,9 @@ export function DishModal({ isOpen, onClose, dish }: DishModalProps) {
       setShow(true)
 
       const lenisInstance = (window as any).lenis
-      if (lenisInstance) {
+      const usedLenis = !!lenisInstance
+
+      if (usedLenis) {
         // Desktop: Solo detener Lenis (suficiente)
         lenisInstance.stop()
       } else {
@@ -30,9 +32,9 @@ export function DishModal({ isOpen, onClose, dish }: DishModalProps) {
 
       // Cleanup: restaurar scroll cuando modal se cierra o desmonta
       return () => {
-        const lenisInstance = (window as any).lenis
-        if (lenisInstance) {
-          lenisInstance.start()
+        if (usedLenis) {
+          const lenis = (window as any).lenis
+          if (lenis) lenis.start()
         } else {
           document.body.style.overflow = ''
         }
