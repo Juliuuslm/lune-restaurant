@@ -28,9 +28,22 @@ export function ImageModal({
     if (isOpen) {
       setShow(true)
       document.body.style.overflow = 'hidden'
+
+      // Detener Lenis si existe
+      const lenisInstance = (window as any).lenis
+      if (lenisInstance) {
+        lenisInstance.stop()
+      }
     } else {
       const timer = setTimeout(() => setShow(false), 300)
       document.body.style.overflow = 'unset'
+
+      // Reiniciar Lenis si existe
+      const lenisInstance = (window as any).lenis
+      if (lenisInstance) {
+        lenisInstance.start()
+      }
+
       return () => clearTimeout(timer)
     }
   }, [isOpen])

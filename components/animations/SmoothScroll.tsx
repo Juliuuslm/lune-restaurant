@@ -37,6 +37,9 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
       infinite: false,
     })
 
+    // Exponer instancia de Lenis globalmente para modals
+    ;(window as any).lenis = lenis
+
     // Sincronizar Lenis con GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update)
 
@@ -51,6 +54,7 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
     return () => {
       lenis.destroy()
       gsap.ticker.remove(lenis.raf)
+      ;(window as any).lenis = null
     }
   }, [])
 
