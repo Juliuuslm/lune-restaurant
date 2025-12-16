@@ -54,37 +54,38 @@ export function ImageModal({
   return (
     <div
       className={cn(
-        'fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 pointer-events-none',
-        isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        'fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 overflow-hidden',
+        isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       )}
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/95 backdrop-blur-sm pointer-events-auto"
+        className="absolute inset-0 bg-black/95 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Contenido */}
+      {/* Contenido con scroll */}
       <div
         className={cn(
-          'relative w-full max-w-4xl max-h-[90vh] overflow-y-auto transition-all duration-500 transform pointer-events-auto z-10',
+          'relative w-full max-w-4xl max-h-[90vh] overflow-y-auto transition-all duration-500 transform z-10 scrollbar-thin',
           isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         )}
         role="dialog"
         aria-modal="true"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Botón cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-30 p-3 bg-white/20 hover:bg-white/40 rounded-full transition-colors text-white active:scale-95 focus-ring"
+          className="sticky top-4 float-right z-30 p-3 bg-white/20 hover:bg-white/40 rounded-full transition-colors text-white active:scale-95 focus-ring mr-4"
           aria-label="Cerrar modal"
         >
           <X size={28} />
         </button>
 
         {/* Imagen */}
-        <div className="relative w-full aspect-[4/3] bg-black rounded-lg overflow-hidden shadow-2xl">
+        <div className="relative w-full aspect-[4/3] bg-black rounded-lg overflow-hidden shadow-2xl clear-both">
           <Image
             src={src}
             alt={alt}
