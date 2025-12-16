@@ -36,18 +36,19 @@ export function ImageModal({
         // Mobile: Sin Lenis, usar overflow hidden
         document.body.style.overflow = 'hidden'
       }
-    } else {
-      const timer = setTimeout(() => setShow(false), 300)
 
-      const lenisInstance = (window as any).lenis
-      if (lenisInstance) {
-        // Desktop: Solo reiniciar Lenis
-        lenisInstance.start()
-      } else {
-        // Mobile: Restaurar overflow
-        document.body.style.overflow = 'unset'
+      // Cleanup: restaurar scroll cuando modal se cierra o desmonta
+      return () => {
+        const lenisInstance = (window as any).lenis
+        if (lenisInstance) {
+          lenisInstance.start()
+        } else {
+          document.body.style.overflow = ''
+        }
       }
-
+    } else {
+      // Solo manejar animación de salida
+      const timer = setTimeout(() => setShow(false), 300)
       return () => clearTimeout(timer)
     }
   }, [isOpen])
