@@ -110,3 +110,44 @@
     -webkit-tap-highlight-color: transparent;
   }
 }
+
+/* ============================================
+   MODAL SCROLL LOCK SYSTEM
+   ============================================ */
+
+/* Sobrescribir Lenis para permitir scroll interno de modals */
+html.lenis.lenis-stopped {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Bloquear scroll del body cuando hay modal abierto */
+body:has([data-modal-scrollable]) {
+  overflow: hidden;
+}
+
+/* Optimizaciones de scroll para modals */
+[data-modal-scrollable] {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+/* Scrollbar personalizado para modals */
+[data-modal-scrollable]::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-modal-scrollable]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-modal-scrollable]::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.5);
+  border-radius: 4px;
+}
+
+[data-modal-scrollable]::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.8);
+}

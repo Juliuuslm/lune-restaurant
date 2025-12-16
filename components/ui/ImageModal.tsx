@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { X, ZoomIn } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
+import { useScrollLock } from '@/hooks/useScrollLock'
 
 interface ImageModalProps {
   isOpen: boolean
@@ -24,32 +25,14 @@ export function ImageModal({
 }: ImageModalProps) {
   const [show, setShow] = useState(false)
 
+  // Manejar bloqueo de scroll (desktop y mobile)
+  useScrollLock(isOpen)
+
+  // Manejar animación de entrada/salida
   useEffect(() => {
     if (isOpen) {
       setShow(true)
-
-      const lenisInstance = (window as any).lenis
-      const usedLenis = !!lenisInstance
-
-      if (usedLenis) {
-        // Desktop: Solo detener Lenis (suficiente)
-        lenisInstance.stop()
-      } else {
-        // Mobile: Sin Lenis, usar overflow hidden
-        document.body.style.overflow = 'hidden'
-      }
-
-      // Cleanup: restaurar scroll cuando modal se cierra o desmonta
-      return () => {
-        if (usedLenis) {
-          const lenis = (window as any).lenis
-          if (lenis) lenis.start()
-        } else {
-          document.body.style.overflow = ''
-        }
-      }
     } else {
-      // Solo manejar animación de salida
       const timer = setTimeout(() => setShow(false), 300)
       return () => clearTimeout(timer)
     }
@@ -87,6 +70,7 @@ export function ImageModal({
 
       {/* Contenido con scroll */}
       <div
+        data-modal-scrollable
         className={cn(
           'relative w-full max-w-4xl max-h-[90vh] overflow-y-scroll transition-all duration-500 transform z-10 bg-black rounded-lg',
           isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { X, Euro } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
 import type { MenuItem } from '@/lib/constants/menu-data'
+import { useScrollLock } from '@/hooks/useScrollLock'
 
 interface DishModalProps {
   isOpen: boolean
@@ -15,32 +16,14 @@ interface DishModalProps {
 export function DishModal({ isOpen, onClose, dish }: DishModalProps) {
   const [show, setShow] = useState(false)
 
+  // Manejar bloqueo de scroll (desktop y mobile)
+  useScrollLock(isOpen)
+
+  // Manejar animación de entrada/salida
   useEffect(() => {
     if (isOpen) {
       setShow(true)
-
-      const lenisInstance = (window as any).lenis
-      const usedLenis = !!lenisInstance
-
-      if (usedLenis) {
-        // Desktop: Solo detener Lenis (suficiente)
-        lenisInstance.stop()
-      } else {
-        // Mobile: Sin Lenis, usar overflow hidden
-        document.body.style.overflow = 'hidden'
-      }
-
-      // Cleanup: restaurar scroll cuando modal se cierra o desmonta
-      return () => {
-        if (usedLenis) {
-          const lenis = (window as any).lenis
-          if (lenis) lenis.start()
-        } else {
-          document.body.style.overflow = ''
-        }
-      }
     } else {
-      // Solo manejar animación de salida
       const timer = setTimeout(() => setShow(false), 300)
       return () => clearTimeout(timer)
     }
@@ -78,6 +61,7 @@ export function DishModal({ isOpen, onClose, dish }: DishModalProps) {
 
       {/* Contenido */}
       <div
+        data-modal-scrollable
         className={cn(
           'relative w-full max-w-2xl max-h-[90vh] overflow-y-scroll bg-cream text-black shadow-2xl transition-all duration-500 transform',
           isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
