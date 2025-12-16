@@ -1,9 +1,16 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { RevealText } from '@/components/animations/RevealText'
+import { ImageModal, ImageTriggerButton } from '@/components/ui/ImageModal'
 
 export function PhilosophySection() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
+    <>
     <section className="py-24 md:py-40 px-6 bg-cream relative">
       <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Imagen */}
@@ -17,6 +24,7 @@ export function PhilosophySection() {
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 quality={85}
               />
+              <ImageTriggerButton onClick={() => setIsModalOpen(true)} />
             </div>
           </RevealText>
           {/* Cita decorativa */}
@@ -55,5 +63,16 @@ export function PhilosophySection() {
         </div>
       </div>
     </section>
+
+    {/* Image Modal */}
+    <ImageModal
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      src="/images/pagina-principal/philosophy.jpg"
+      alt="Filosofía de Lune - Detalle de plato gourmet"
+      title="Nuestra Filosofía"
+      description="En el corazón de Lune, creemos que la verdadera sofisticación reside en la sustracción. Nuestra cocina busca despertar los sentidos con precisión y equilibrio."
+    />
+    </>
   )
 }

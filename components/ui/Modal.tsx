@@ -34,6 +34,20 @@ export function Modal({
     }
   }, [isOpen])
 
+  // Manejar ESC key para cerrar modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose()
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape)
+      return () => document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isOpen, onClose])
+
   if (!show && !isOpen) return null
 
   return (
