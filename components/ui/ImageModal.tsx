@@ -54,13 +54,13 @@ export function ImageModal({
   return (
     <div
       className={cn(
-        'fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300',
-        isOpen ? 'opacity-100' : 'opacity-0'
+        'fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 pointer-events-none',
+        isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       )}
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/95 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/95 backdrop-blur-sm pointer-events-auto"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -68,7 +68,7 @@ export function ImageModal({
       {/* Contenido */}
       <div
         className={cn(
-          'relative w-full max-w-6xl transition-all duration-500 transform',
+          'relative w-full max-w-6xl transition-all duration-500 transform pointer-events-auto z-10',
           isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         )}
         role="dialog"
@@ -77,10 +77,10 @@ export function ImageModal({
         {/* Botón cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-3 bg-black/50 hover:bg-black/70 rounded-full transition-colors text-white active:scale-95 focus-ring"
+          className="absolute top-4 right-4 z-30 p-3 bg-white/20 hover:bg-white/40 rounded-full transition-colors text-white active:scale-95 focus-ring"
           aria-label="Cerrar modal"
         >
-          <X size={24} />
+          <X size={28} />
         </button>
 
         {/* Imagen */}
@@ -97,12 +97,12 @@ export function ImageModal({
 
         {/* Info debajo de la imagen */}
         {(title || description) && (
-          <div className="mt-6 text-center text-white">
+          <div className="mt-8 text-center text-white px-4">
             {title && (
-              <h3 className="text-2xl md:text-3xl font-serif mb-2">{title}</h3>
+              <h3 className="text-2xl md:text-3xl font-serif mb-4 text-white">{title}</h3>
             )}
             {description && (
-              <p className="text-gray-300 font-light max-w-2xl mx-auto">
+              <p className="text-gray-100 font-light max-w-2xl mx-auto leading-relaxed text-base md:text-lg">
                 {description}
               </p>
             )}
