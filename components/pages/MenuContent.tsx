@@ -38,8 +38,8 @@ function MenuItem({ item, onClick }: { item: MenuItemType; onClick: () => void }
         </div>
       )}
 
-      {/* Indicador de click */}
-      <div className="absolute bottom-2 right-2 text-xs text-gray-400 group-hover:text-gold opacity-0 group-hover:opacity-100 transition-all duration-300">
+      {/* Indicador de click - visible por defecto, desaparece al hacer hover */}
+      <div className="absolute bottom-2 right-2 text-xs text-gray-500 opacity-100 group-hover:opacity-0 transition-all duration-300">
         Ver detalles →
       </div>
     </div>
