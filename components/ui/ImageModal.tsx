@@ -68,7 +68,7 @@ export function ImageModal({
       {/* Contenido */}
       <div
         className={cn(
-          'relative w-full max-w-6xl transition-all duration-500 transform pointer-events-auto z-10',
+          'relative w-full max-w-4xl max-h-[90vh] overflow-y-auto transition-all duration-500 transform pointer-events-auto z-10',
           isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         )}
         role="dialog"
@@ -91,13 +91,13 @@ export function ImageModal({
             fill
             className="object-contain"
             quality={95}
-            sizes="(max-width: 1536px) 100vw, 1536px"
+            sizes="(max-width: 1280px) 100vw, 1280px"
           />
         </div>
 
         {/* Info debajo de la imagen */}
         {(title || description) && (
-          <div className="mt-8 text-center text-white px-4">
+          <div className="mt-8 mb-6 text-center text-white px-4">
             {title && (
               <h3 className="text-2xl md:text-3xl font-serif mb-4 text-white">{title}</h3>
             )}
