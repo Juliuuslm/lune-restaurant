@@ -17,21 +17,25 @@ export function WineModal({ isOpen, onClose, wine }: WineModalProps) {
   useEffect(() => {
     if (isOpen) {
       setShow(true)
-      document.body.style.overflow = 'hidden'
 
-      // Detener Lenis si existe
       const lenisInstance = (window as any).lenis
       if (lenisInstance) {
+        // Desktop: Solo detener Lenis (suficiente)
         lenisInstance.stop()
+      } else {
+        // Mobile: Sin Lenis, usar overflow hidden
+        document.body.style.overflow = 'hidden'
       }
     } else {
       const timer = setTimeout(() => setShow(false), 300)
-      document.body.style.overflow = 'unset'
 
-      // Reiniciar Lenis si existe
       const lenisInstance = (window as any).lenis
       if (lenisInstance) {
+        // Desktop: Solo reiniciar Lenis
         lenisInstance.start()
+      } else {
+        // Mobile: Restaurar overflow
+        document.body.style.overflow = 'unset'
       }
 
       return () => clearTimeout(timer)
@@ -58,7 +62,7 @@ export function WineModal({ isOpen, onClose, wine }: WineModalProps) {
     <div
       className={cn(
         'fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300',
-        isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        isOpen ? 'opacity-100' : 'opacity-0'
       )}
       onClick={onClose}
     >
@@ -76,6 +80,7 @@ export function WineModal({ isOpen, onClose, wine }: WineModalProps) {
         )}
         style={{
           overscrollBehavior: 'contain',
+          WebkitOverflowScrolling: 'touch',
         }}
         role="dialog"
         aria-modal="true"
