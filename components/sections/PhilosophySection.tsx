@@ -29,7 +29,7 @@ export function PhilosophySection() {
           </RevealText>
           {/* Cita decorativa */}
           <RevealText direction="up" delay={0.4}>
-            <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/95 backdrop-blur-sm border-l-2 border-gold shadow-lg hover:shadow-xl hover:border-l-gold-light transition-all duration-300 group">
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 md:bottom-8 md:left-8 md:right-8 p-4 sm:p-5 md:p-6 bg-white/95 backdrop-blur-sm border-l-2 border-gold shadow-lg hover:shadow-xl hover:border-l-gold-light transition-all duration-300 group">
               <p className="font-serif italic text-lg text-gray-800 group-hover:text-gold transition-colors duration-300">
                 "La cuisine est un art de la patience."
               </p>

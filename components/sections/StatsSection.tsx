@@ -25,9 +25,9 @@ export function StatsSection() {
   return (
     <section className="py-section-sm md:py-section-md px-6 bg-white">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center">
           {stats.map((stat, i) => (
-            <div key={i} className="p-10 border border-gray-100 shadow-sm hover:shadow-xl hover:border-gold/30 transition-all duration-500 bg-[#FBFBFB]">
+            <div key={i} className="p-6 sm:p-8 md:p-10 border border-gray-100 shadow-sm hover:shadow-xl hover:border-gold/30 transition-all duration-500 bg-[#FBFBFB]">
               <stat.icon
                 className="mx-auto mb-6 text-gold"
                 size={32}

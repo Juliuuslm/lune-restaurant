@@ -26,7 +26,7 @@ export default function ReservasPage() {
       {/* Content */}
       <div className="bg-cream text-black min-h-screen">
       <div className="container mx-auto max-w-6xl px-6 -mt-12 md:-mt-20 relative z-20 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
           {/* Form */}
           <div className="lg:col-span-2 bg-white p-6 md:p-10 lg:p-12 shadow-2xl border-t-4 border-gold">
             <RevealText>
@@ -37,7 +37,7 @@ export default function ReservasPage() {
 
           {/* Sidebar Info */}
           <div className="space-y-8 pt-12 lg:pt-0">
-            <RevealText delay={0.2} className="bg-white p-10 shadow-lg">
+            <RevealText delay={0.2} className="bg-white p-6 sm:p-8 md:p-10 shadow-lg">
               <h3 className="text-xl font-serif mb-6 flex items-center">
                 <Utensils size={20} className="mr-3 text-gold" />
                 Información
@@ -58,7 +58,7 @@ export default function ReservasPage() {
               </ul>
             </RevealText>
 
-            <RevealText delay={0.4} className="bg-black text-white p-10 shadow-lg text-center">
+            <RevealText delay={0.4} className="bg-black text-white p-6 sm:p-8 md:p-10 shadow-lg text-center">
               <h3 className="text-xl font-serif mb-4 text-gold">Comedor Privado</h3>
               <p className="text-gray-400 font-light text-sm mb-6 leading-relaxed">
                 Para eventos exclusivos en nuestra sala privada "La Lune Noire".

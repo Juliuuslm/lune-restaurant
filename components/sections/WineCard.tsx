@@ -10,7 +10,7 @@ export function WineCard({ wine, onClick }: WineCardProps) {
   return (
     <div
       onClick={onClick}
-      className="flex justify-between items-baseline gap-4 border-b border-gray-800 pb-4 hover:border-gold transition-colors group cursor-pointer relative"
+      className="flex justify-between items-baseline gap-2 sm:gap-3 md:gap-4 border-b border-gray-800 pb-4 hover:border-gold transition-colors group cursor-pointer relative"
     >
       <div className="flex-1 min-w-0">
         <h4 className="text-xl font-serif text-gray-200 group-hover:text-gold transition-colors">
