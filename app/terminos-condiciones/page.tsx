@@ -136,8 +136,8 @@ export default function TerminosCondicionesPage() {
                 Para cualquier pregunta sobre estos términos y condiciones:
               </p>
               <p className="font-medium">
-                Email: legal@lune-paris.com<br />
-                Teléfono: +33 1 23 45 67 89<br />
+                Email: contacto@aurora33.org<br />
+                Teléfono: +52 55 7453 3388<br />
                 Dirección: 12 Rue de la Lune, 75002 París, Francia
               </p>
             </section>

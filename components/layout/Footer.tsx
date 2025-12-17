@@ -53,8 +53,8 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="text-gold text-xs tracking-widest uppercase">Contacto</h4>
             <div className="text-sm text-gray-400 font-light space-y-4">
-              <p>contact@lune-paris.com</p>
-              <p>+33 1 23 45 67 89</p>
+              <p>contacto@aurora33.org</p>
+              <p>+52 55 7453 3388</p>
               <p className="text-xs pt-2">12 Rue de la Lune<br />75002 París, Francia</p>
 
               {/* Social Media */}
