@@ -83,7 +83,10 @@ export default function PoliticaPrivacidadPage() {
                 <li>Portabilidad de datos</li>
               </ul>
               <p className="leading-relaxed">
-                Para ejercer estos derechos, contacte con: contacto@aurora33.org
+                Para ejercer estos derechos, contacte con:{' '}
+                <a href="mailto:contacto@aurora33.org" className="text-blue-600 hover:text-blue-800 underline">
+                  contacto@aurora33.org
+                </a>
               </p>
             </section>
 
@@ -101,10 +104,22 @@ export default function PoliticaPrivacidadPage() {
               <p className="leading-relaxed">
                 Si tiene preguntas sobre esta política de privacidad, contacte con nosotros en:
               </p>
-              <p className="font-medium">
-                Email: contacto@aurora33.org<br />
-                Teléfono: +52 55 7453 3388<br />
-                Dirección: 12 Rue de la Lune, 75002 París, Francia
+              <p className="font-medium space-y-2">
+                <div>
+                  Email:{' '}
+                  <a href="mailto:contacto@aurora33.org" className="text-blue-600 hover:text-blue-800 underline">
+                    contacto@aurora33.org
+                  </a>
+                </div>
+                <div>
+                  Teléfono:{' '}
+                  <a href="https://wa.me/5255743388" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">
+                    +52 55 7453 3388
+                  </a>
+                </div>
+                <div>
+                  Dirección: 12 Rue de la Lune, 75002 París, Francia
+                </div>
               </p>
             </section>
           </div>

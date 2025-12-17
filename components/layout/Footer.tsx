@@ -53,8 +53,12 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="text-gold text-xs tracking-widest uppercase">Contacto</h4>
             <div className="text-sm text-gray-400 font-light space-y-4">
-              <p>contacto@aurora33.org</p>
-              <p>+52 55 7453 3388</p>
+              <a href="mailto:contacto@aurora33.org" className="hover:text-gold transition-colors">
+                contacto@aurora33.org
+              </a>
+              <a href="https://wa.me/5255743388" target="_blank" rel="noopener noreferrer" className="block hover:text-gold transition-colors">
+                +52 55 7453 3388
+              </a>
               <p className="text-xs pt-2">12 Rue de la Lune<br />75002 París, Francia</p>
 
               {/* Social Media */}
