@@ -58,14 +58,14 @@ export function MenuContent() {
   return (
     <>
       {/* Sticky Navigation */}
-      <div className="sticky top-[64px] lg:top-[64px] z-40 bg-cream border-b border-gray-200 py-4 shadow-sm overflow-hidden">
+      <div className="sticky top-16 z-40 bg-cream border-b border-gray-200 py-4 shadow-sm overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex justify-start md:justify-center gap-4 md:gap-8 lg:gap-16 overflow-x-auto pb-2 -mb-2 scrollbar-thin">
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="flex items-center gap-2 py-2 px-2 text-xs md:text-sm uppercase tracking-wide md:tracking-widest whitespace-nowrap transition-colors border-b-2 border-transparent hover:text-gold hover:border-gold text-gray-600 active:scale-95 flex-shrink-0"
+                className="flex items-center gap-2 py-3 px-3 text-xs sm:text-sm uppercase tracking-wide md:tracking-widest whitespace-nowrap transition-colors border-b-2 border-transparent hover:text-gold hover:border-gold text-gray-600 active:scale-95 flex-shrink-0"
               >
                 <span className="hidden md:inline">
                   <item.icon size={14} />

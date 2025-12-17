@@ -143,7 +143,7 @@ export function ReservaForm() {
                 onChange={handleChange}
                 min={getMinDate()}
                 max={getMaxDate()}
-                className="w-full outline-none bg-transparent font-serif text-lg text-black"
+                className="w-full py-3 px-2 outline-none bg-transparent font-serif text-lg text-black"
                 required
               />
             </div>
@@ -169,7 +169,7 @@ export function ReservaForm() {
                 name="hora"
                 value={formData.hora}
                 onChange={handleChange}
-                className="w-full outline-none bg-transparent font-serif text-lg text-black cursor-pointer"
+                className="w-full py-3 px-2 outline-none bg-transparent font-serif text-lg text-black cursor-pointer"
                 required
               >
                 <option value="19:00">19:00</option>
@@ -199,7 +199,7 @@ export function ReservaForm() {
               name="invitados"
               value={formData.invitados}
               onChange={handleChange}
-              className="w-full outline-none bg-transparent font-serif text-lg text-black cursor-pointer"
+              className="w-full py-3 px-2 outline-none bg-transparent font-serif text-lg text-black cursor-pointer"
               required
             >
               <option value="1">1 Persona</option>
@@ -224,7 +224,7 @@ export function ReservaForm() {
               placeholder="Nombre"
               value={formData.nombre}
               onChange={handleChange}
-              className={`w-full border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
+              className={`w-full py-3 px-2 border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
                 errors.nombre ? 'border-red-400 focus:border-red-400' : 'border-gray-300 focus:border-gold'
               }`}
               required
@@ -245,7 +245,7 @@ export function ReservaForm() {
               placeholder="Teléfono"
               value={formData.telefono}
               onChange={handleChange}
-              className={`w-full border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
+              className={`w-full py-3 px-2 border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
                 errors.telefono ? 'border-red-400 focus:border-red-400' : 'border-gray-300 focus:border-gold'
               }`}
               required
@@ -267,7 +267,7 @@ export function ReservaForm() {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
+            className={`w-full py-3 px-2 border-b pb-2 outline-none font-light text-lg placeholder-gray-400 transition-colors ${
               errors.email ? 'border-red-400 focus:border-red-400' : 'border-gray-300 focus:border-gold'
             }`}
             required
@@ -289,7 +289,7 @@ export function ReservaForm() {
             value={formData.comentarios}
             onChange={handleChange}
             maxLength={500}
-            className="w-full border-b border-gray-300 pb-2 outline-none font-light text-lg placeholder-gray-400 focus:border-gold transition-colors h-24 resize-none"
+            className="w-full py-3 px-2 border-b border-gray-300 pb-2 outline-none font-light text-lg placeholder-gray-400 focus:border-gold transition-colors h-24 resize-none"
           />
           <div className="text-right text-xs text-gray-400">
             {formData.comentarios.length}/500
