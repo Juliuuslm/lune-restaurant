@@ -77,7 +77,7 @@ export function DishModal({ isOpen, onClose, dish }: DishModalProps) {
         {/* Botón cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 p-2 hover:bg-black/10 rounded-full transition-colors text-gray-600 hover:text-black active:scale-95 focus-ring"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 p-2 sm:p-3 hover:bg-black/10 rounded-full transition-colors text-gray-600 hover:text-black active:scale-95 focus-ring"
           aria-label="Cerrar modal"
         >
           <X size={24} />
@@ -97,9 +97,9 @@ export function DishModal({ isOpen, onClose, dish }: DishModalProps) {
         )}
 
         {/* Contenido */}
-        <div className="p-8 md:p-12">
+        <div className="p-4 sm:p-6 md:p-8 lg:p-12">
           {/* Nombre del plato */}
-          <h2 className="text-4xl md:text-5xl font-serif mb-4 italic text-black">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif mb-4 italic text-black">
             {dish.name}
           </h2>
 

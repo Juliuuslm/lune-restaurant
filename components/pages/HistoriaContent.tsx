@@ -24,7 +24,7 @@ export function HistoriaContent() {
             <RevealText>
               <div className="relative">
                 {/* Background number decorativo */}
-                <span className="absolute -top-8 -left-4 text-9xl font-serif text-gray-100 select-none pointer-events-none">
+                <span className="absolute text-6xl sm:text-8xl md:text-9xl font-serif text-gray-100 select-none pointer-events-none -top-2 sm:-top-4 md:-top-8 -left-1 sm:-left-2 md:-left-4">
                   01
                 </span>
                 <div className="relative z-10 aspect-square overflow-hidden bg-gray-200 group">
@@ -67,7 +67,7 @@ export function HistoriaContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <RevealText delay={0.2} className="order-2 md:order-1">
               <div className="space-y-6">
-                <span className="absolute -top-8 text-9xl font-serif text-gray-200 select-none pointer-events-none">
+                <span className="absolute text-6xl sm:text-8xl md:text-9xl font-serif text-gray-200 select-none pointer-events-none -top-2 sm:-top-4 md:-top-8">
                   02
                 </span>
                 <h2 className="text-4xl font-serif relative z-10">La cocina como lienzo.</h2>
@@ -100,7 +100,7 @@ export function HistoriaContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <RevealText>
               <div className="relative">
-                <span className="absolute -top-8 -left-4 text-9xl font-serif text-gray-100 select-none pointer-events-none">
+                <span className="absolute text-6xl sm:text-8xl md:text-9xl font-serif text-gray-100 select-none pointer-events-none -top-2 sm:-top-4 md:-top-8 -left-1 sm:-left-2 md:-left-4">
                   03
                 </span>
                 <div className="relative z-10 aspect-[3/4] overflow-hidden shadow-2xl bg-gray-200">

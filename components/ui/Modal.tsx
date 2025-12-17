@@ -91,9 +91,9 @@ export function Modal({
         </button>
 
         {/* Contenido */}
-        <div className="p-8 md:p-12">
+        <div className="p-4 sm:p-6 md:p-8 lg:p-12">
           {title && (
-            <h3 id="modal-title" className="text-3xl font-serif mb-6 text-center">
+            <h3 id="modal-title" className="text-xl sm:text-2xl md:text-3xl font-serif mb-6 text-center">
               {title}
             </h3>
           )}

@@ -101,7 +101,7 @@ export function Navbar() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={cn(
-              'lg:hidden z-50 p-2 transition-colors active:scale-95 focus-ring rounded-sm',
+              'lg:hidden z-50 p-3 transition-colors active:scale-95 focus-ring rounded-sm',
               scrolled || isMenuOpen ? 'text-black' : 'text-white',
               isMenuOpen && '!text-cream'
             )}
@@ -120,7 +120,7 @@ export function Navbar() {
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
         )}
       >
-        <div className="flex flex-col space-y-8 text-center font-serif text-3xl">
+        <div className="flex flex-col space-y-4 sm:space-y-6 md:space-y-8 text-center font-serif text-xl sm:text-2xl md:text-3xl">
           {navLinks.map((link) => (
             <Link
               key={link.id}

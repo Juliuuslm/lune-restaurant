@@ -76,14 +76,14 @@ export function WineModal({ isOpen, onClose, wine }: WineModalProps) {
         {/* Botón cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 p-2 hover:bg-white/10 rounded-full transition-colors text-gray-400 hover:text-white active:scale-95 focus-ring"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 p-2 sm:p-3 hover:bg-white/10 rounded-full transition-colors text-gray-400 hover:text-white active:scale-95 focus-ring"
           aria-label="Cerrar modal"
         >
           <X size={24} />
         </button>
 
         {/* Contenido */}
-        <div className="p-8 md:p-12">
+        <div className="p-4 sm:p-6 md:p-8 lg:p-12">
           {/* Icono decorativo */}
           <div className="flex items-center justify-center mb-8">
             <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center">
@@ -92,7 +92,7 @@ export function WineModal({ isOpen, onClose, wine }: WineModalProps) {
           </div>
 
           {/* Nombre del vino */}
-          <h2 className="text-3xl md:text-4xl font-serif mb-4 italic text-center text-cream">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif mb-4 italic text-center text-cream">
             {wine.name}
           </h2>
 

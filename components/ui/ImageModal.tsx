@@ -86,10 +86,10 @@ export function ImageModal({
         {/* Botón cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 p-3 bg-white/20 hover:bg-white/40 rounded-full transition-colors text-white active:scale-95 focus-ring"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 p-2 sm:p-3 bg-white/20 hover:bg-white/40 rounded-full transition-colors text-white active:scale-95 focus-ring"
           aria-label="Cerrar modal"
         >
-          <X size={28} />
+          <X size={24} />
         </button>
 
         {/* Imagen */}
@@ -108,7 +108,7 @@ export function ImageModal({
         {(title || description) && (
           <div className="mt-8 mb-6 text-center text-white px-4">
             {title && (
-              <h3 className="text-2xl md:text-3xl font-serif mb-4 text-white">{title}</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-serif mb-4 text-white">{title}</h3>
             )}
             {description && (
               <p className="text-gray-100 font-light max-w-2xl mx-auto leading-relaxed text-base md:text-lg">

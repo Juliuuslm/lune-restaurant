@@ -5,7 +5,7 @@ import { RevealText } from '@/components/animations/RevealText'
 
 export function HeroSection() {
   return (
-    <header className="relative h-[60vh] md:h-[80vh] lg:h-screen w-full flex flex-col justify-center items-center overflow-hidden">
+    <header className="relative h-[70vh] sm:h-[65vh] md:h-[80vh] lg:h-screen w-full flex flex-col justify-center items-center overflow-hidden">
       {/* Hero Background Image */}
       <Image
         src="/images/pagina-principal/hero.jpg"
