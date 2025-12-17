@@ -25,9 +25,9 @@ export function WineCard({ wine, onClick }: WineCardProps) {
         €{wine.price}
       </span>
 
-      {/* Indicador de click */}
+      {/* Indicador de click - visible en mobile, desaparece en hover */}
       {onClick && (
-        <div className="absolute bottom-1 right-2 text-xs text-gray-600 group-hover:text-gold opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div className="absolute bottom-1 right-2 text-xs text-gray-600 opacity-100 group-hover:opacity-0 group-hover:text-gray-400 transition-all duration-300">
           Ver detalles →
         </div>
       )}
