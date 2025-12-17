@@ -77,9 +77,9 @@ export function VinosContent() {
             <p className="text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed px-6">
               {pairingInfo.description}
             </p>
-            <div className="inline-block px-8 py-3 border border-gold text-gold text-sm tracking-widest uppercase hover:bg-gold hover:text-black transition-all duration-300 cursor-default">
+            <button className="inline-block px-6 sm:px-10 py-4 sm:py-5 border-2 border-gold text-gold text-xs sm:text-sm md:text-base tracking-widest uppercase hover:bg-gold hover:text-black transition-all duration-300 font-semibold shadow-lg hover:shadow-xl hover:shadow-gold/30 active:scale-95">
               Maridaje Completo (+€{pairingInfo.price})
-            </div>
+            </button>
             <p className="text-xs text-gray-600 mt-6 max-w-xl mx-auto px-6">
               {pairingInfo.details}
             </p>

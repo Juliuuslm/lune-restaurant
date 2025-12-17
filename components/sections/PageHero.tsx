@@ -35,7 +35,7 @@ export function PageHero({
     dark: 'bg-black/80',
   }
 
-  const paddingClass = additionalPadding ? 'pt-20 md:pt-24' : ''
+  const paddingClass = additionalPadding ? 'pt-20 md:pt-24' : 'pt-8 sm:pt-12 md:pt-0'
 
   return (
     <header
