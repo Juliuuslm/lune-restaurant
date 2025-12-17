@@ -58,7 +58,7 @@ export function MenuContent() {
   return (
     <>
       {/* Sticky Navigation */}
-      <div className="sticky top-16 z-40 bg-cream border-b border-gray-200 py-4 shadow-sm overflow-hidden">
+      <div className="sticky top-16 z-30 bg-cream border-b border-gray-200 py-4 shadow-sm overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex justify-start md:justify-center gap-4 md:gap-8 lg:gap-16 overflow-x-auto pb-2 -mb-2 scrollbar-thin">
             {navItems.map((item) => (
