@@ -86,8 +86,21 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-900 text-xs text-gray-600 tracking-wider uppercase">
-          <p>&copy; {currentYear} Lune Restaurant. Todos los derechos reservados.</p>
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-900 text-xs text-gray-600 tracking-wider uppercase space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-4 md:space-y-0">
+            <p>&copy; {currentYear} Lune Restaurant. Todos los derechos reservados.</p>
+            <p className="text-gray-500 text-xs font-light tracking-normal normal-case">
+              Built with love and AI by{' '}
+              <a
+                href="https://aurora33.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold hover:text-white transition-colors underline decoration-gold hover:decoration-white focus-ring rounded-sm"
+              >
+                Aurora33
+              </a>
+            </p>
+          </div>
           <div className="flex space-x-8 mt-4 md:mt-0">
             <Link
               href="/politica-privacidad"
