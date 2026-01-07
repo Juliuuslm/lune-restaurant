@@ -91,7 +91,8 @@ export function DishModal({ isOpen, onClose, dish }: DishModalProps) {
               alt={dish.name}
               fill
               className="object-cover"
-              quality={90}
+              quality={85}
+              priority
             />
           </div>
         )}

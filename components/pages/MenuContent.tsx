@@ -8,9 +8,21 @@ import { DishModal } from '@/components/ui/DishModal'
 import { Wheat, ChevronDown, Coffee } from 'lucide-react'
 
 function MenuItem({ item, onClick }: { item: MenuItemType; onClick: () => void }) {
+  // Prefetch de imagen en hover para carga instantánea en modal
+  const handleMouseEnter = () => {
+    if (item.image) {
+      const link = document.createElement('link')
+      link.rel = 'prefetch'
+      link.as = 'image'
+      link.href = item.image
+      document.head.appendChild(link)
+    }
+  }
+
   return (
     <div
       onClick={onClick}
+      onMouseEnter={handleMouseEnter}
       className="group relative py-8 border-b border-gray-200 hover:border-gold transition-colors duration-500 cursor-pointer"
     >
       <div className="flex justify-between items-baseline z-10 relative">
@@ -34,6 +46,7 @@ function MenuItem({ item, onClick }: { item: MenuItemType; onClick: () => void }
             width={192}
             height={128}
             className="w-full h-full object-cover rounded shadow-lg grayscale group-hover:grayscale-0 transition-all duration-700"
+            quality={75}
           />
         </div>
       )}
