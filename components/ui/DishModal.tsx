@@ -90,6 +90,7 @@ export function DishModal({ isOpen, onClose, dish }: DishModalProps) {
               src={dish.image}
               alt={dish.name}
               fill
+              sizes="(max-width: 768px) 100vw, 672px"
               className="object-cover"
               quality={85}
               priority

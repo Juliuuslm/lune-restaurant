@@ -135,6 +135,7 @@ export function MenuContent() {
               src="/images/pagina-menu/chef-plating.jpg"
               alt="Chef emplatando en Lune"
               fill
+              sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover"
               quality={85}
             />

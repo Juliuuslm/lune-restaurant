@@ -39,6 +39,7 @@ export function VinosContent() {
                 src="/images/vinos/sommelier.jpg"
                 alt="Claire Dubois - Sommelier Jefe"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 quality={85}
               />

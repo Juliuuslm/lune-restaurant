@@ -21,6 +21,7 @@ export function PhilosophySection() {
                 src="/images/pagina-principal/philosophy.jpg"
                 alt="Filosofía de Lune - Detalle de plato gourmet"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 quality={85}
               />

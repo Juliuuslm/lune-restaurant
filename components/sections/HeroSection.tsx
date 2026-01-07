@@ -11,6 +11,7 @@ export function HeroSection() {
         src="/images/pagina-principal/hero.jpg"
         alt="Restaurante Lune Hero"
         fill
+        sizes="100vw"
         className="object-cover -z-10"
         priority
         quality={85}

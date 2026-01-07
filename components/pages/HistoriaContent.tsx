@@ -32,6 +32,7 @@ export function HistoriaContent() {
                     src="/images/historia/vintage.jpg"
                     alt="Historia del Restaurante Lune"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     quality={85}
                   />
@@ -85,6 +86,7 @@ export function HistoriaContent() {
                   src="/images/pagina-menu/chef-plating.jpg"
                   alt="Chef preparando un plato en Lune"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                   quality={85}
                 />
@@ -108,6 +110,7 @@ export function HistoriaContent() {
                     src="/images/pagina-menu/plats-1.jpg"
                     alt="Platillo de Lune"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                     quality={85}
                   />
@@ -148,6 +151,7 @@ export function HistoriaContent() {
                 src="/images/historia/chef.png"
                 alt="Lune Dessendre - L'Âme Culinaire"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 quality={85}
               />

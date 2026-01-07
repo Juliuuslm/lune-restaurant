@@ -46,6 +46,7 @@ export function PageHero({
         src={image}
         alt={title}
         fill
+        sizes="100vw"
         className="object-cover -z-10"
         priority
         quality={85}
