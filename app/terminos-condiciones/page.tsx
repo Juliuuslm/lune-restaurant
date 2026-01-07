@@ -135,7 +135,7 @@ export default function TerminosCondicionesPage() {
               <p className="leading-relaxed">
                 Para cualquier pregunta sobre estos términos y condiciones:
               </p>
-              <p className="font-medium space-y-2">
+              <div className="font-medium space-y-2">
                 <div>
                   Email:{' '}
                   <a href="mailto:contacto@aurora33.org" className="text-blue-600 hover:text-blue-800 underline">
@@ -151,7 +151,7 @@ export default function TerminosCondicionesPage() {
                 <div>
                   Dirección: 12 Rue de la Lune, 75002 París, Francia
                 </div>
-              </p>
+              </div>
             </section>
           </div>
         </div>
