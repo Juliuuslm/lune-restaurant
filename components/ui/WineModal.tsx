@@ -104,13 +104,13 @@ export function WineModal({ isOpen, onClose, wine }: WineModalProps) {
           {/* Precio */}
           <div className="flex items-center justify-center space-x-2 text-gold mb-10">
             <Euro size={20} strokeWidth={2} />
-            <span className="text-3xl font-semibold">{wine.price}</span>
+            <span className="text-2xl font-semibold">{wine.price}</span>
           </div>
 
           {/* Descripción */}
           {wine.description && (
             <div className="border-t border-gray-800 pt-8 mb-8">
-              <h3 className="text-sm uppercase tracking-widest text-gold font-bold mb-4 text-center">
+              <h3 className="text-lg uppercase tracking-widest text-gold font-bold mb-4 text-center">
                 Notas de Cata
               </h3>
               <p className="text-gray-300 leading-8 font-light text-lg text-center max-w-lg mx-auto">

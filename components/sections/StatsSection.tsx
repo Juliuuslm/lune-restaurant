@@ -33,7 +33,7 @@ export function StatsSection() {
                 size={32}
                 strokeWidth={1}
               />
-              <h3 className="text-lg font-serif mb-4 font-medium">{stat.title}</h3>
+              <h3 className="text-2xl font-serif mb-4 font-medium">{stat.title}</h3>
               <p className="text-gray-500 font-light text-sm leading-6">{stat.text}</p>
             </div>
           ))}

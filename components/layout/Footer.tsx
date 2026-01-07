@@ -19,7 +19,7 @@ export function Footer() {
 
           {/* Explorar */}
           <div className="space-y-6">
-            <h4 className="text-gold text-xs tracking-widest uppercase">Explorar</h4>
+            <h4 className="text-gold text-sm tracking-widest uppercase">Explorar</h4>
             <ul className="space-y-2 text-base text-gray-400 font-light">
               <li>
                 <Link href="/" className="block py-2 hover:text-white transition-colors active:scale-95 focus-ring rounded-sm">
@@ -51,7 +51,7 @@ export function Footer() {
 
           {/* Contacto */}
           <div className="space-y-6">
-            <h4 className="text-gold text-xs tracking-widest uppercase">Contacto</h4>
+            <h4 className="text-gold text-sm tracking-widest uppercase">Contacto</h4>
             <div className="text-sm text-gray-400 font-light space-y-4">
               <a href="mailto:contacto@aurora33.org" className="hover:text-gold transition-colors">
                 contacto@aurora33.org

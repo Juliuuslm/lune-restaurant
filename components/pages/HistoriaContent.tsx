@@ -194,21 +194,21 @@ export function HistoriaContent() {
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-black">
                 <Feather strokeWidth={1} size={32} />
               </div>
-              <h3 className="text-xl font-serif">Silencio</h3>
+              <h3 className="text-2xl font-serif">Silencio</h3>
               <p className="text-gray-500 font-light leading-7">El lujo es la ausencia de ruido.</p>
             </div>
             <div className="space-y-4">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-black">
                 <Droplet strokeWidth={1} size={32} />
               </div>
-              <h3 className="text-xl font-serif">Pureza</h3>
+              <h3 className="text-2xl font-serif">Pureza</h3>
               <p className="text-gray-500 font-light leading-7">Ingredientes sin disfraces.</p>
             </div>
             <div className="space-y-4">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-black">
                 <Sun strokeWidth={1} size={32} />
               </div>
-              <h3 className="text-xl font-serif">Tiempo</h3>
+              <h3 className="text-2xl font-serif">Tiempo</h3>
               <p className="text-gray-500 font-light leading-7">
                 Respetamos el ritmo de las cosas buenas.
               </p>
