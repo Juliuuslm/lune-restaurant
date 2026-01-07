@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { menuCategories, type MenuItem as MenuItemType } from '@/lib/constants/menu-data'
 import { RevealText } from '@/components/animations/RevealText'
@@ -8,21 +8,9 @@ import { DishModal } from '@/components/ui/DishModal'
 import { Wheat, ChevronDown, Coffee } from 'lucide-react'
 
 function MenuItem({ item, onClick }: { item: MenuItemType; onClick: () => void }) {
-  // Prefetch de imagen en hover para carga instantánea en modal
-  const handleMouseEnter = () => {
-    if (item.image) {
-      const link = document.createElement('link')
-      link.rel = 'prefetch'
-      link.as = 'image'
-      link.href = item.image
-      document.head.appendChild(link)
-    }
-  }
-
   return (
     <div
       onClick={onClick}
-      onMouseEnter={handleMouseEnter}
       className="group relative py-8 border-b border-gray-200 hover:border-gold transition-colors duration-500 cursor-pointer"
     >
       <div className="flex justify-between items-baseline z-10 relative">
@@ -61,6 +49,28 @@ function MenuItem({ item, onClick }: { item: MenuItemType; onClick: () => void }
 
 export function MenuContent() {
   const [selectedDish, setSelectedDish] = useState<MenuItemType | null>(null)
+
+  // Precargar TODAS las imágenes del menú al cargar la página
+  useEffect(() => {
+    const imagesToPreload: string[] = []
+
+    menuCategories.forEach(category => {
+      category.items.forEach(item => {
+        if (item.image) {
+          imagesToPreload.push(item.image)
+        }
+      })
+    })
+
+    // Precargar imágenes de forma no bloqueante
+    imagesToPreload.forEach(src => {
+      const link = document.createElement('link')
+      link.rel = 'preload'
+      link.as = 'image'
+      link.href = src
+      document.head.appendChild(link)
+    })
+  }, [])
 
   const navItems = [
     { id: 'entrees', label: 'Para Empezar', icon: Wheat },
