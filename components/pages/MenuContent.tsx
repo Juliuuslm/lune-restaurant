@@ -83,9 +83,9 @@ export function MenuContent() {
           <section
             key={category.id}
             id={category.id}
-            className="py-section-sm md:py-section-md scroll-mt-[180px]"
+            className="py-12 md:py-16 scroll-mt-[180px]"
           >
-            <RevealText className="mb-12 text-center">
+            <RevealText className="mb-8 md:mb-10 text-center">
               <span className="text-gold text-xs font-bold tracking-widest uppercase block mb-2">
                 {category.subtitle}
               </span>
@@ -100,7 +100,7 @@ export function MenuContent() {
 
             {/* Divider */}
             {idx < menuCategories.length - 1 && (
-              <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-10"></div>
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-6 md:my-8"></div>
             )}
           </section>
         ))}
