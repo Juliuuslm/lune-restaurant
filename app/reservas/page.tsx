@@ -64,10 +64,10 @@ export default function ReservasPage() {
                 Para eventos exclusivos en nuestra sala privada "La Lune Noire".
               </p>
               <a
-                href="mailto:events@lune-paris.com"
+                href="mailto:hola@aurora33.org"
                 className="inline-block border-b border-gold pb-1 text-gold text-sm tracking-widest uppercase hover:text-white hover:border-white transition-all"
               >
-                events@lune-paris.com
+                hola@aurora33.org
               </a>
             </RevealText>
           </div>

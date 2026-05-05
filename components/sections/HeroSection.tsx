@@ -17,8 +17,8 @@ export function HeroSection() {
         quality={85}
       />
       {/* Overlay gradients */}
-      <div className="absolute inset-0 z-0 bg-black/60"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+      <div className="absolute inset-0 z-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/40"></div>
 
       {/* Contenido */}
       <div className="z-10 text-center px-4 max-w-3xl text-white">
@@ -29,7 +29,7 @@ export function HeroSection() {
         </RevealText>
 
         <RevealText delay={0.3}>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-serif font-light text-white max-w-2xl mx-auto leading-relaxed drop-shadow-lg mb-12">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-serif font-light text-white max-w-2xl mx-auto leading-relaxed mb-12" style={{textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8)'}}>
             Donde la tradición culinaria se encuentra con el minimalismo moderno bajo la luz de París.
           </p>
         </RevealText>

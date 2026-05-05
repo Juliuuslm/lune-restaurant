@@ -53,8 +53,8 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="text-gold text-sm tracking-widest uppercase">Contacto</h4>
             <div className="text-sm text-gray-400 font-light space-y-4">
-              <a href="mailto:contacto@aurora33.org" className="hover:text-gold transition-colors">
-                contacto@aurora33.org
+              <a href="mailto:hola@aurora33.org" className="hover:text-gold transition-colors">
+                hola@aurora33.org
               </a>
               <a href="https://wa.me/5255743388" target="_blank" rel="noopener noreferrer" className="block hover:text-gold transition-colors">
                 +52 55 7453 3388
@@ -96,7 +96,7 @@ export function Footer() {
             <p className="text-gray-500 text-xs font-light tracking-normal normal-case">
               Built with love and AI by{' '}
               <a
-                href="https://aurora33.com"
+                href="https://aurora33.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gold hover:text-white transition-colors underline decoration-gold hover:decoration-white focus-ring rounded-sm"

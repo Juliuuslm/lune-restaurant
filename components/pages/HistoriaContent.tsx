@@ -67,7 +67,7 @@ export function HistoriaContent() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <RevealText delay={0.2} className="order-2 md:order-1">
-              <div className="space-y-6">
+              <div className="relative space-y-6">
                 <span className="absolute text-6xl sm:text-8xl md:text-9xl font-serif text-gray-200 select-none pointer-events-none -top-2 sm:-top-4 md:-top-8">
                   02
                 </span>

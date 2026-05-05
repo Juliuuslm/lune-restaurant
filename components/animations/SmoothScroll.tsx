@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, type ReactNode } from 'react'
+import { usePathname } from 'next/navigation'
 import Lenis from 'lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -15,6 +16,16 @@ interface SmoothScrollProps {
 }
 
 export function SmoothScroll({ children }: SmoothScrollProps) {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(0, { immediate: true })
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname])
+
   useEffect(() => {
     // Detectar si es dispositivo móvil o tablet
     const isMobile =

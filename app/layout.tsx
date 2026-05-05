@@ -26,7 +26,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://restaurantelune.com'),
+  metadataBase: new URL('https://aurora33.org'),
   title: {
     default: 'Restaurante Lune - Experiencia Culinaria Única',
     template: '%s | Restaurante Lune',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    url: 'https://restaurantelune.com',
+    url: 'https://aurora33.org',
     siteName: 'Restaurante Lune',
     title: 'Restaurante Lune - Experiencia Culinaria Única',
     description: 'Gastronomía francesa con elegancia minimalista en París',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: 'Restaurante Lune',
     description: 'Experiencia culinaria única en París',
     images: ['/twitter-image.jpg'],
-    creator: '@restaurantelune',
+    creator: '@aurora33',
   },
   robots: {
     index: true,
@@ -85,9 +85,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: '/images/Favicon/favicon-lune.png',
+    shortcut: '/images/Favicon/favicon-lune.png',
+    apple: '/images/Favicon/favicon-lune.png',
   },
 }
 
@@ -101,9 +101,9 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Restaurant',
     name: 'Restaurante Lune',
-    image: 'https://restaurantelune.com/og-image.jpg',
-    '@id': 'https://restaurantelune.com',
-    url: 'https://restaurantelune.com',
+    image: 'https://aurora33.org/og-image.jpg',
+    '@id': 'https://aurora33.org',
+    url: 'https://aurora33.org',
     telephone: '+33-1-23-45-67-89',
     priceRange: '€€€€',
     address: {

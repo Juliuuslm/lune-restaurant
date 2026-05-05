@@ -138,8 +138,8 @@ export default function TerminosCondicionesPage() {
               <div className="font-medium space-y-2">
                 <div>
                   Email:{' '}
-                  <a href="mailto:contacto@aurora33.org" className="text-blue-600 hover:text-blue-800 underline">
-                    contacto@aurora33.org
+                  <a href="mailto:hola@aurora33.org" className="text-blue-600 hover:text-blue-800 underline">
+                    hola@aurora33.org
                   </a>
                 </div>
                 <div>
